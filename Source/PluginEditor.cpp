@@ -52,7 +52,7 @@ void Chopper_auv3AudioProcessorEditor::paint (Graphics& g)
 
     g.setColour (Colours::white);
     g.setFont (15.0f);
-    g.drawFittedText ("This is an effect built with gen", getLocalBounds(), Justification::centred, 1);
+    g.drawFittedText ("It's chopper baby", getLocalBounds(), Justification::centred, 1);
 }
 #pragma mark -- callbacks
 void Chopper_auv3AudioProcessorEditor::resized(){

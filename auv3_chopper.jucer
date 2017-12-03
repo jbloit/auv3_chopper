@@ -9,7 +9,8 @@
               pluginCode="Hkjb" pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="1"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="auv3_chopperAU" pluginRTASCategory="" aaxIdentifier="com.jbloit.auv3_chopper"
-              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.0.2">
+              pluginAAXCategory="AAX_ePlugInCategory_Dynamics" jucerVersion="5.2.0"
+              cppLanguageStandard="11" companyCopyright="">
   <MAINGROUP id="hqLI3O" name="auv3_chopper">
     <GROUP id="{BD3FC70C-0CD4-7619-1A85-932896E5CDE3}" name="Source">
       <FILE id="zfP59j" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -45,8 +46,10 @@
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="auv3_chopper"
-                       headerPath="$(PROJECT_DIR)/../../exported-code&#10;$(PROJECT_DIR)/../../exported-code/gen_dsp"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="auv3_chopper"/>
+                       headerPath="$(PROJECT_DIR)/../../exported-code&#10;$(PROJECT_DIR)/../../exported-code/gen_dsp"
+                       enablePluginBinaryCopyStep="1"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="auv3_chopper"
+                       enablePluginBinaryCopyStep="1" headerPath="$(PROJECT_DIR)/../../exported-code&#10;$(PROJECT_DIR)/../../exported-code/gen_dsp"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../LIBS/JUCE/modules"/>
@@ -63,12 +66,16 @@
         <MODULEPATH id="juce_audio_formats" path="../../LIBS/JUCE/modules"/>
         <MODULEPATH id="juce_audio_processors" path="../../LIBS/JUCE/modules"/>
         <MODULEPATH id="juce_audio_plugin_client" path="../../LIBS/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../LIBS/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <XCODE_IPHONE targetFolder="Builds/iOS" iosScreenOrientation="portraitlandscape">
+    <XCODE_IPHONE targetFolder="Builds/iOS" iosScreenOrientation="portraitlandscape"
+                  iPadScreenOrientation="portraitlandscape" iosDeviceFamily="1,2">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="auv3_chopper"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="auv3_chopper"/>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="auv3_chopper"
+                       enablePluginBinaryCopyStep="1" headerPath="$(PROJECT_DIR)/../../exported-code&#10;$(PROJECT_DIR)/../../exported-code/gen_dsp"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="auv3_chopper"
+                       enablePluginBinaryCopyStep="1" headerPath="$(PROJECT_DIR)/../../exported-code&#10;$(PROJECT_DIR)/../../exported-code/gen_dsp"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../LIBS/JUCE/modules"/>
@@ -85,24 +92,27 @@
         <MODULEPATH id="juce_audio_formats" path="../../LIBS/JUCE/modules"/>
         <MODULEPATH id="juce_audio_processors" path="../../LIBS/JUCE/modules"/>
         <MODULEPATH id="juce_audio_plugin_client" path="../../LIBS/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../LIBS/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_IPHONE>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <JUCEOPTIONS JUCE_QUICKTIME="disabled"/>
 </JUCERPROJECT>
