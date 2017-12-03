@@ -198,7 +198,7 @@ void Chopper_auv3AudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
     }
 
     
-    ScopedNoDenormals noDenormals;
+//    ScopedNoDenormals noDenormals;
     const int totalNumInputChannels  = getTotalNumInputChannels();
     const int totalNumOutputChannels = getTotalNumOutputChannels();
     
